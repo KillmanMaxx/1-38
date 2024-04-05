@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Size</title>
+</head>
+<body>
+    <div id="div1" style="width: 200px; height: 150px; background-color: lightblue;"></div>
+    <button onclick="changeSize()">Change Size</button>
+
+    <script>
+        function changeSize() {
+            const div1 = document.getElementById("div1");
+            div1.style.width = "400px";
+            div1.style.height = "300px";
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Dimensions</title>
+</head>
+<body>
+    <div id="elem" style="width: 200px; height: 100px; background-color: lightgreen;"></div>
+    <button onclick="getDimensions()">Get Dimensions</button>
+
+    <script>
+        function getDimensions() {
+            const elem = document.getElementById("elem");
+            const width = parseInt(elem.style.width);
+            const height = parseInt(elem.style.height);
+            console.log("Width:", width, "Height:", height);
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Font Size</title>
+</head>
+<body>
+    <div id="elem2" style="font-size: 16px;">Sample Text</div>
+    <button onclick="getFontSize()">Get Font Size</button>
+
+    <script>
+        function getFontSize() {
+            const elem2 = document.getElementById("elem2");
+            const fontSize = parseFloat(elem2.style.fontSize);
+            console.log("Font Size:", fontSize);
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increase Font Size</title>
+</head>
+<body>
+    <div id="elem" style="font-size: 16px;">Sample Text</div>
+    <button onclick="increaseFontSize()">Increase Font Size</button>
+
+    <script>
+        function increaseFontSize() {
+            const elem = document.getElementById("elem");
+            let currentFontSize = parseInt(elem.style.fontSize);
+            elem.style.fontSize = (currentFontSize + 2) + 'px';
+        }
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increase Font Size in em</title>
+</head>
+<body>
+    <div id="elem" style="font-size: 1em;">Sample Text</div>
+    <button onclick="increaseFontSize()">Increase Font Size</button>
+
+    <script>
+        function increaseFontSize() {
+            const elem = document.getElementById("elem");
+            let currentFontSize = parseFloat(elem.style.fontSize);
+            elem.style.fontSize = (currentFontSize + 2) + 'em';
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increase Element Size</title>
+</head>
+<body>
+    <div id="elem" style="width: 200px; height: 150px; background-color: lightblue;"></div>
+    <button onclick="increaseSize()">Increase Size</button>
+
+    <script>
+        function increaseSize() {
+            let elem = document.getElementById('elem');
+            let currentWidth = parseInt(elem.style.width);
+            let currentHeight = parseInt(elem.style.height);
+            elem.style.width = (currentWidth + 50) + 'px';
+            elem.style.height = (currentHeight + 50) + 'px';
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increase Element Size by 10%</title>
+</head>
+<body>
+    <div id="elem" style="width: 200px; height: 150px; background-color: lightblue;"></div>
+    <button onclick="increaseSize()">Increase Size</button>
+
+    <script>
+        function increaseSize() {
+            let elem = document.getElementById('elem');
+            let currentWidth = elem.offsetWidth;
+            let currentHeight = elem.offsetHeight;
+            elem.style.width = (currentWidth * 1.1) + 'px';
+            elem.style.height = (currentHeight * 1.1) + 'px';
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Border Properties</title>
+</head>
+<body>
+    <div id="elem" style="width: 200px; height: 150px; border: 2px solid black; background-color: lightblue;"></div>
+    <button id="btn">Get Border Properties</button>
+
+    <script>
+        const elem = document.getElementById('elem');
+        const button = document.getElementById('btn');
+
+        button.addEventListener('click', function() {
+            const borderStyle = window.getComputedStyle(elem).border;
+
+            const parts = borderStyle.split(' ');
+
+            const thickness = parts[0];
+            const borderType = parts[1];
+            const color = parts[2];
+
+            alert(`Border Thickness: ${thickness}\nBorder Type: ${borderType}\nBorder Color: ${color}`);
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increase Size</title>
+</head>
+<body>
+    <div id="elem" style="width: 200px; height: 100px; background-color: lightblue;"></div>
+    <button onclick="increaseSize()">Increase Size</button>
+
+    <script>
+        function increaseSize() {
+            let elem = document.getElementById('elem');
+            let currentWidth = parseInt(elem.style.width); 
+            let currentHeight = parseInt(elem.style.height); 
+            elem.style.width = (currentWidth + 50) + 'px'; 
+            elem.style.height = (currentHeight + 50) + 'px'; 
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increase Size</title>
+</head>
+<body>
+    <div id="elem" style="width: 200px; height: 100px; background-color: lightblue;"></div>
+    <button onclick="increaseSize()">Increase Size</button>
+
+    <script>
+        function increaseSize() {
+            let elem = document.getElementById('elem');
+            let currentWidth = elem.offsetWidth; 
+            let currentHeight = elem.offsetHeight; 
+            elem.style.width = (currentWidth * 1.1) + 'px'; 
+            elem.style.height = (currentHeight * 1.1) + 'px'; 
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Border Style</title>
+</head>
+<body>
+    <div id="elem" style="border: 2px dashed red; padding: 10px;">Sample Text</div>
+    <button id="btn">Get Border Style</button>
+
+    <script>
+        const elem = document.getElementById('elem');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+
+            const borderStyle = window.getComputedStyle(elem).border;
+
+            const parts = borderStyle.split(' ');
+
+            const thickness = parts[0];
+            const borderType = parts[1];
+            const color = parts[2];
+
+            alert(`Border Thickness: ${thickness}\nBorder Type: ${borderType}\nBorder Color: ${color}`);
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide Element</title>
+</head>
+<body>
+    <div id="elem" style="width: 100px; height: 100px; background-color: lightblue;"></div>
+    <button id="hideBtn">Hide</button>
+    <button id="showBtn">Show</button>
+
+    <script>
+        const elem = document.getElementById('elem');
+        const hideBtn = document.getElementById('hideBtn');
+        const showBtn = document.getElementById('showBtn');
+
+        hideBtn.addEventListener('click', function () {
+            elem.style.display = 'none';
+        });
+
+        showBtn.addEventListener('click', function () {
+            elem.style.display = '';
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+</head>
+<body>
+    <div id="elem" style="width: 100px; height: 100px; background-color: lightblue;"></div>
+    <button id="colorBtn">Change Color</button>
+    <button id="resetColorBtn">Reset Color</button>
+
+    <script>
+        const elem = document.getElementById('elem');
+        const colorBtn = document.getElementById('colorBtn');
+        const resetColorBtn = document.getElementById('resetColorBtn');
+
+        colorBtn.addEventListener('click', function () {
+            elem.style.backgroundColor = 'red';
+        });
+
+        resetColorBtn.addEventListener('click', function () {
+            elem.style.backgroundColor = '';
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Class by Number</title>
+    <style>
+        .even { background-color: lightblue; }
+        .odd { background-color: lightgreen; }
+    </style>
+</head>
+<body>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+
+    <script>
+        const paragraphs = document.querySelectorAll('p');
+
+        paragraphs.forEach(paragraph => {
+            const number = parseInt(paragraph.textContent);
+            if (number % 2 === 0) {
+                paragraph.classList.add('even');
+            } else {
+                paragraph.classList.add('odd');
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Class</title>
+    <style>
+        .active { background-color: red; }
+    </style>
+</head>
+<body>
+    <p>Click me</p>
+
+    <script>
+        const paragraphs = document.querySelectorAll('p');
+
+        paragraphs.forEach(paragraph => {
+            let isRed = false;
+
+            paragraph.addEventListener('click', function () {
+
+                if (isRed) {
+                    paragraph.classList.remove('active');
+                } else {
+                    paragraph.classList.add('active');
+                }
+
+                isRed = !isRed;
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Validation</title>
+    <style>
+        .valid { border: 2px solid green; }
+        .invalid { border: 2px solid red; }
+    </style>
+</head>
+<body>
+    <input type="text" id="inputField" placeholder="Enter text here">
+
+    <script>
+        const inputField = document.getElementById('inputField');
+
+        inputField.addEventListener('blur', function () {
+            const inputValue = inputField.value;
+
+            if (inputValue.length <= 9) {
+                inputField.classList.remove('invalid');
+                inputField.classList.add('valid');
+            } else {
+                inputField.classList.remove('valid');
+                inputField.classList.add('invalid');
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Class by Number</title>
+    <style>
+        .less-than-10 { color: green; }
+        .between-10-and-20 { color: orange; }
+        .more-than-20 { color: red; }
+    </style>
+</head>
+<body>
+    <input type="number" id="inputField" placeholder="Enter a number">
+
+    <script>
+        const inputField = document.getElementById('inputField');
+
+        inputField.addEventListener('blur', function () {
+            const inputValue = parseInt(inputField.value);
+
+            if (!isNaN(inputValue)) {
+                if (inputValue < 10) {
+                    inputField.className = 'less-than-10';
+                } else if (inputValue >= 10 && inputValue <= 20) {
+                    inputField.className = 'between-10-and-20';
+                } else {
+                    inputField.className = 'more-than-20';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Dimensions</title>
+</head>
+<body>
+    <div id="elem" style="width: 200px; height: 150px; border: 2px solid black; padding: 20px;">Sample Text</div>
+    <button id="btn">Get Dimensions</button>
+
+    <script>
+        const elem = document.getElementById('elem');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+            console.log('Width including padding and border:', elem.offsetWidth);
+            console.log('Height including padding and border:', elem.offsetHeight);
+
+            const extraWidth = elem.offsetWidth - elem.clientWidth;
+            const extraHeight = elem.offsetHeight - elem.clientHeight;
+            console.log('Extra width (padding, border):', extraWidth);
+            console.log('Extra height (padding, border):', extraHeight);
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Position</title>
+    <style>
+        #elem {
+            width: 200px;
+            height: 150px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem" style="border: 1px solid black;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sem dignissim, interdum velit nec, suscipit turpis. Nunc consectetur laoreet orci vel malesuada. Proin scelerisque metus non augue tristique, ac tempus velit ultricies. Integer venenatis nulla eu elit dapibus, eget accumsan odio fermentum. Nunc condimentum nunc vitae massa tristique, eu aliquet mauris vehicula. Integer auctor semper lacus, in sagittis nisi convallis eu. Vivamus auctor lorem id quam commodo fermentum.</p>
+        <p>Maecenas ullamcorper mauris ut ultricies interdum. Cras non tellus vel purus fermentum mattis. Praesent vel felis rutrum, elementum erat vitae, fermentum nulla. Duis ac mauris ipsum. Sed nec arcu sed ligula euismod ullamcorper sed sit amet metus. Nulla facilisi. Sed vitae felis nisi. Integer a risus in odio convallis vehicula. Sed id leo vitae orci mollis vehicula.</p>
+        <p>Vivamus eget nulla semper, volutpat libero nec, viverra mauris. Fusce auctor nec nisi non porttitor. Sed in neque in dolor iaculis aliquet in vel lorem. Duis congue odio nec metus vestibulum, quis molestie massa fermentum. Sed bibendum dui sed magna posuere, quis facilisis lectus vestibulum. Maecenas sit amet tincidunt elit. Vivamus id orci vitae eros ultricies tristique.</p>
+    </div>
+    <button id="btn">Get Scroll Position</button>
+
+    <script>
+        const elem = document.getElementById('elem');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+            console.log('Vertical Scroll:', elem.scrollTop);
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Scroll Position</title>
+    <style>
+        #elem {
+            width: 200px;
+            height: 150px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem" style="border: 1px solid black;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sem dignissim, interdum velit nec, suscipit turpis. Nunc consectetur laoreet orci vel malesuada. Proin scelerisque metus non augue tristique, ac tempus velit ultricies. Integer venenatis nulla eu elit dapibus, eget accumsan odio fermentum. Nunc condimentum nunc vitae massa tristique, eu aliquet mauris vehicula. Integer auctor semper lacus, in sagittis nisi convallis eu. Vivamus auctor lorem id quam commodo fermentum.</p>
+        <p>Maecenas ullamcorper mauris ut ultricies interdum. Cras non tellus vel purus fermentum mattis. Praesent vel felis rutrum, elementum erat vitae, fermentum nulla. Duis ac mauris ipsum. Sed nec arcu sed ligula euismod ullamcorper sed sit amet metus. Nulla facilisi. Sed vitae felis nisi. Integer a risus in odio convallis vehicula. Sed id leo vitae orci mollis vehicula.</p>
+        <p>Vivamus eget nulla semper, volutpat libero nec, viverra mauris. Fusce auctor nec nisi non porttitor. Sed in neque in dolor iaculis aliquet in vel lorem. Duis congue odio nec metus vestibulum, quis molestie massa fermentum. Sed bibendum dui sed magna posuere, quis facilisis lectus vestibulum. Maecenas sit amet tincidunt elit. Vivamus id orci vitae eros ultricies tristique.</p>
+    </div>
+    <button id="btn">Check Scroll Position</button>
+
+    <script>
+        const elem = document.getElementById('elem');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+            if (elem.scrollTop > 0) {
+                console.log('Element is scrolled vertically');
+            } else {
+                console.log('Element is not scrolled vertically');
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Height of Element</title>
+    <style>
+        #elem {
+            width: 200px;
+            height: 150px;
+            overflow: auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sem dignissim, interdum velit nec, suscipit turpis. Nunc consectetur laoreet orci vel malesuada.</p>
+        <p>Proin scelerisque metus non augue tristique, ac tempus velit ultricies. Integer venenatis nulla eu elit dapibus, eget accumsan odio fermentum. Nunc condimentum nunc vitae massa tristique, eu aliquet mauris vehicula.</p>
+        <p>Integer auctor semper lacus, in sagittis nisi convallis eu. Vivamus auctor lorem id quam commodo fermentum. Maecenas ullamcorper mauris ut ultricies interdum. Cras non tellus vel purus fermentum mattis.</p>
+    </div>
+    <button id="btn">Get Full Height</button>
+
+    <script>
+        const elem = document.getElementById('elem');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+            console.log('Full height of element:', elem.scrollHeight);
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference between scrollHeight and full scroll</title>
+    <style>
+        #elem {
+            width: 200px;
+            height: 150px;
+            overflow: auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sem dignissim, interdum velit nec, suscipit turpis. Nunc consectetur laoreet orci vel malesuada.</p>
+        <p>Proin scelerisque metus non augue tristique, ac tempus velit ultricies. Integer venenatis nulla eu elit dapibus, eget accumsan odio fermentum. Nunc condimentum nunc vitae massa tristique, eu aliquet mauris vehicula.</p>
+        <p>Integer auctor semper lacus, in sagittis nisi convallis eu. Vivamus auctor lorem id quam commodo fermentum. Maecenas ullamcorper mauris ut ultricies interdum. Cras non tellus vel purus fermentum mattis.</p>
+    </div>
+    <button id="btn">Calculate Difference</button>
+
+    <script>
+        const elem = document.getElementById('elem');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+            const diff = elem.scrollHeight - elem.scrollTop;
+            console.log('Difference between scrollHeight and full scroll:', diff);
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Element Vertically</title>
+    <style>
+        #scrollableElement {
+            width: 200px;
+            height: 150px;
+            overflow: auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="scrollableElement">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sem dignissim, interdum velit nec, suscipit turpis. Nunc consectetur laoreet orci vel malesuada.</p>
+        <p>Proin scelerisque metus non augue tristique, ac tempus velit ultricies. Integer venenatis nulla eu elit dapibus, eget accumsan odio fermentum. Nunc condimentum nunc vitae massa tristique, eu aliquet mauris vehicula.</p>
+        <p>Integer auctor semper lacus, in sagittis nisi convallis eu. Vivamus auctor lorem id quam commodo fermentum. Maecenas ullamcorper mauris ut ultricies interdum. Cras non tellus vel purus fermentum mattis.</p>
+    </div>
+    <button id="scrollButton">Scroll Down</button>
+
+    <script>
+        document.getElementById('scrollButton').addEventListener('click', function () {
+            const elem = document.getElementById('scrollableElement');
+            elem.scrollTop += 100;
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Height of Element</title>
+    <style>
+        #elem {
+            width: 200px;
+            height: 150px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem" style="border: 1px solid black;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sem dignissim, interdum velit nec, suscipit turpis. Nunc consectetur laoreet orci vel malesuada. Proin scelerisque metus non augue tristique, ac tempus velit ultricies. Integer venenatis nulla eu elit dapibus, eget accumsan odio fermentum. Nunc condimentum nunc vitae massa tristique, eu aliquet mauris vehicula. Integer auctor semper lacus, in sagittis nisi convallis eu. Vivamus auctor lorem id quam commodo fermentum.</p>
+        <p>Maecenas ullamcorper mauris ut ultricies interdum. Cras non tellus vel purus fermentum mattis. Praesent vel felis rutrum, elementum erat vitae, fermentum nulla. Duis ac mauris ipsum. Sed nec arcu sed ligula euismod ullamcorper sed sit amet metus. Nulla facilisi. Sed vitae felis nisi. Integer a risus in odio convallis vehicula. Sed id leo vitae orci mollis vehicula.</p>
+        <p>Vivamus eget nulla semper, volutpat libero nec, viverra mauris. Fusce auctor nec nisi non porttitor. Sed in neque in dolor iaculis aliquet in vel lorem. Duis congue odio nec metus vestibulum, quis molestie massa fermentum. Sed bibendum dui sed magna posuere, quis facilisis lectus vestibulum. Maecenas sit amet tincidunt elit. Vivamus id orci vitae eros ultricies tristique.</p>
+    </div>
+    <button id="btn">Get Full Height of Element</button>
+
+    <script>
+        const elem = document.getElementById('elem');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+            console.log('Full Height of Element:', elem.scrollHeight);
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Height Difference</title>
+    <style>
+        #elem {
+            width: 200px;
+            height: 150px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem" style="border: 1px solid black;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sem dignissim, interdum velit nec, suscipit turpis. Nunc consectetur laoreet orci vel malesuada. Proin scelerisque metus non augue tristique, ac tempus velit ultricies. Integer venenatis nulla eu elit dapibus, eget accumsan odio fermentum. Nunc condimentum nunc vitae massa tristique, eu aliquet mauris vehicula. Integer auctor semper lacus, in sagittis nisi convallis eu. Vivamus auctor lorem id quam commodo fermentum.</p>
+        <p>Maecenas ullamcorper mauris ut ultricies interdum. Cras non tellus vel purus fermentum mattis. Praesent vel felis rutrum, elementum erat vitae, fermentum nulla. Duis ac mauris ipsum. Sed nec arcu sed ligula euismod ullamcorper sed sit amet metus. Nulla facilisi. Sed vitae felis nisi. Integer a risus in odio convallis vehicula. Sed id leo vitae orci mollis vehicula.</p>
+        <p>Vivamus eget nulla semper, volutpat libero nec, viverra mauris. Fusce auctor nec nisi non porttitor. Sed in neque in dolor iaculis aliquet in vel lorem. Duis congue odio nec metus vestibulum, quis molestie massa fermentum. Sed bibendum dui sed magna posuere, quis facilisis lectus vestibulum. Maecenas sit amet tincidunt elit. Vivamus id orci vitae eros ultricies tristique.</p>
+    </div>
+    <button id="btn">Get Scroll Height Difference</button>
+
+    <script>
+        const elem = document.getElementById('elem');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+            const diff = elem.scrollHeight - elem.scrollTop;
+            console.log('Difference between scrollHeight and scrollTop:', diff);
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offset Height vs Scroll Height</title>
+    <style>
+        #elem {
+            width: 200px;
+            height: 150px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem" style="border: 1px solid black;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sem dignissim, interdum velit nec, suscipit turpis. Nunc consectetur laoreet orci vel malesuada. Proin scelerisque metus non augue tristique, ac tempus velit ultricies. Integer venenatis nulla eu elit dapibus, eget accumsan odio fermentum. Nunc condimentum nunc vitae massa tristique, eu aliquet mauris vehicula. Integer auctor semper lacus, in sagittis nisi convallis eu. Vivamus auctor lorem id quam commodo fermentum.</p>
+        <p>Maecenas ullamcorper mauris ut ultricies interdum. Cras non tellus vel purus fermentum mattis. Praesent vel felis rutrum, elementum erat vitae, fermentum nulla. Duis ac mauris ipsum. Sed nec arcu sed ligula euismod ullamcorper sed sit amet metus. Nulla facilisi. Sed vitae felis nisi. Integer a risus in odio convallis vehicula. Sed id leo vitae orci mollis vehicula.</p>
+        <p>Vivamus eget nulla semper, volutpat libero nec, viverra mauris. Fusce auctor nec nisi non porttitor. Sed in neque in dolor iaculis aliquet in vel lorem. Duis congue odio nec metus vestibulum, quis molestie massa fermentum. Sed bibendum dui sed magna posuere, quis facilisis lectus vestibulum. Maecenas sit amet tincidunt elit. Vivamus id orci vitae eros ultricies tristique.</p>
+    </div>
+    <button id="btn">Get Offset Height vs Scroll Height</button>
+
+    <script>
+        const elem = document.getElementById('elem');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+            const diff = elem.offsetHeight - elem.scrollHeight;
+            console.log('Difference between offsetHeight and scrollHeight:', diff);
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offset Height Difference</title>
+    <style>
+        #elem {
+            width: 200px;
+            height: 150px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem" style="border: 1px solid black;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sem dignissim, interdum velit nec, suscipit turpis. Nunc consectetur laoreet orci vel malesuada. Proin scelerisque metus non augue tristique, ac tempus velit ultricies. Integer venenatis nulla eu elit dapibus, eget accumsan odio fermentum. Nunc condimentum nunc vitae massa tristique, eu aliquet mauris vehicula. Integer auctor semper lacus, in sagittis nisi convallis eu. Vivamus auctor lorem id quam commodo fermentum.</p>
+        <p>Maecenas ullamcorper mauris ut ultricies interdum. Cras non tellus vel purus fermentum mattis. Praesent vel felis rutrum, elementum erat vitae, fermentum nulla. Duis ac mauris ipsum. Sed nec arcu sed ligula euismod ullamcorper sed sit amet metus. Nulla facilisi. Sed vitae felis nisi. Integer a risus in odio convallis vehicula. Sed id leo vitae orci mollis vehicula.</p>
+        <p>Vivamus eget nulla semper, volutpat libero nec, viverra mauris. Fusce auctor nec nisi non porttitor. Sed in neque in dolor iaculis aliquet in vel lorem. Duis congue odio nec metus vestibulum, quis molestie massa fermentum. Sed bibendum dui sed magna posuere, quis facilisis lectus vestibulum. Maecenas sit amet tincidunt elit. Vivamus id orci vitae eros ultricies tristique.</p>
+    </div>
+    <button id="btn">Get Offset Height Difference</button>
+
+    <script>
+        const elem = document.getElementById('elem');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+            const diff = elem.offsetHeight + elem.scrollTop - elem.scrollHeight;
+            console.log('Difference between offsetHeight and scrollHeight:', diff);
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Element</title>
+    <style>
+        #scrollableElement {
+            width: 300px;
+            height: 200px;
+            overflow: auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="scrollableElement">
+        <div style="width: 1000px; height: 1000px; background-color: #f0f0f0;"></div>
+    </div>
+    <button id="scrollButton">Scroll</button>
+
+    <script>
+        document.getElementById('scrollButton').addEventListener('click', function() {
+            const elem = document.getElementById('scrollableElement');
+            elem.scrollTop += 100; // Прокрутка на 100px вниз
+            elem.scrollLeft += 50; // Прокрутка на 50px вправо
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Scroll End</title>
+    <style>
+        #scrollableElement {
+            width: 300px;
+            height: 200px;
+            overflow: auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="scrollableElement">
+        <div style="width: 1000px; height: 1000px; background-color: #f0f0f0;"></div>
+    </div>
+    <button id="scrollCheckButton">Check Scroll End</button>
+
+    <script>
+        document.getElementById('scrollCheckButton').addEventListener('click', function() {
+            const elem = document.getElementById('scrollableElement');
+            const isScrolledToEnd = elem.scrollHeight - elem.scrollTop === elem.clientHeight;
+            if (isScrolledToEnd) {
+                alert('Element is scrolled to the end vertically.');
+            } else {
+                alert('Element is not scrolled to the end vertically.');
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expand Element</title>
+    <style>
+        #expandableElement {
+            width: 200px;
+            overflow: hidden;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="expandableElement">
+        <p>This is a paragraph inside the expandable element.</p>
+        <button id="expandButton">Expand</button>
+    </div>
+
+    <script>
+        document.getElementById('expandButton').addEventListener('click', function() {
+            const elem = document.getElementById('expandableElement');
+            elem.style.height = elem.scrollHeight + 'px'; // Распахнуть элемент на всю высоту
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollbar Width</title>
+    <style>
+        #scrollbarWidthButton {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="scrollbarWidthButton">Get Scrollbar Width</button>
+
+    <script>
+        document.getElementById('scrollbarWidthButton').addEventListener('click', function() {
+            let div = document.createElement('div');
+            div.style.overflowY = 'scroll';
+            div.style.width = '50px';
+            div.style.height = '50px';
+            document.body.append(div);
+            
+            let scrollbarWidth = div.offsetWidth - div.clientWidth;
+            console.log('Scrollbar Width: ' + scrollbarWidth + 'px');
+            
+            div.remove();
+        });
+    </script>
+</body>ё
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Size</title>
+    <style>
+        #sizeButton {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="sizeButton">Get Window Size</button>
+
+    <script>
+        document.getElementById('sizeButton').addEventListener('click', function() {
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+            console.log('Window Width: ' + width + 'px');
+            console.log('Window Height: ' + height + 'px');
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Scroll</title>
+    <style>
+        #verticalScrollButton {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="verticalScrollButton">Check Vertical Scroll</button>
+
+    <script>
+        document.getElementById('verticalScrollButton').addEventListener('click', function() {
+            let hasVerticalScroll = document.documentElement.scrollHeight > window.innerHeight;
+            if (hasVerticalScroll) {
+                console.log('Vertical Scroll is present.');
+            } else {
+                console.log('Vertical Scroll is absent.');
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll</title>
+    <style>
+        #horizontalScrollButton {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="horizontalScrollButton">Check Horizontal Scroll</button>
+
+    <script>
+        document.getElementById('horizontalScrollButton').addEventListener('click', function() {
+            let hasHorizontalScroll = document.documentElement.scrollWidth > window.innerWidth;
+            if (hasHorizontalScroll) {
+                console.log('Horizontal Scroll is present.');
+            } else {
+                console.log('Horizontal Scroll is absent.');
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Height with Scroll</title>
+    <style>
+        #scrollHeightButton {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="scrollHeightButton">Get Window Height with Scroll</button>
+
+    <script>
+        document.getElementById('scrollHeightButton').addEventListener('click', function() {
+            let scrollHeight = Math.max(
+                document.body.scrollHeight, document.documentElement.scrollHeight,
+                document.body.offsetHeight, document.documentElement.offsetHeight,
+                document.body.clientHeight, document.documentElement.clientHeight
+            );
+            console.log('Window Height with Scroll: ' + scrollHeight + 'px');
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Width with Scroll</title>
+    <style>
+        #scrollWidthButton {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="scrollWidthButton">Get Window Width with Scroll</button>
+
+    <script>
+        document.getElementById('scrollWidthButton').addEventListener('click', function() {
+            let scrollWidth = Math.max(
+                document.body.scrollWidth, document.documentElement.scrollWidth,
+                document.body.offsetWidth, document.documentElement.offsetWidth,
+                document.body.clientWidth, document.documentElement.clientWidth
+            );
+            console.log('Window Width with Scroll: ' + scrollWidth + 'px');
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Scroll Position</title>
+    <style>
+        #btn {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Get Vertical Scroll Position</button>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            let scrollTop = window.pageYOffset;
+            console.log('Vertical Scroll Position: ' + scrollTop + 'px');
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remaining Scroll</title>
+    <style>
+        #btn {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Get Remaining Scroll</button>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            let scrollTop = window.pageYOffset;
+            let scrollHeight = document.documentElement.scrollHeight;
+            let windowHeight = window.innerHeight;
+            let remainingScroll = scrollHeight - windowHeight - scrollTop;
+            console.log('Remaining Scroll: ' + remainingScroll + 'px');
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Position</title>
+    <style>
+        #btn {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Scroll to Position</button>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            document.documentElement.scrollTop = 300;
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Position with Offset</title>
+    <style>
+        #btn {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Scroll to Position with Offset</button>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            document.documentElement.scrollTop = document.documentElement.scrollHeight - window.innerHeight - 100;
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Coordinates</title>
+    <style>
+        #btn {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Scroll to Coordinates</button>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            window.scrollTo(0, 300);
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scroll to Top</title>
+    <style>
+        #btn {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Smooth Scroll to Top</button>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scroll to Bottom</title>
+    <style>
+        #btn {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Smooth Scroll to Bottom</button>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Down</title>
+    <style>
+        #btn {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Scroll Down</button>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            window.scrollBy(0, 100);
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Up</title>
+    <style>
+        #btn {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Scroll Up</button>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            window.scrollBy(0, -100);
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scroll Down</title>
+    <style>
+        #btn {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Smooth Scroll Down</button>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            window.scrollBy({
+                top: 100,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scroll Up</title>
+    <style>
+        #btn {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Smooth Scroll Up</button>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            window.scrollBy({
+                top: -100,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Element</title>
+    <style>
+        #elem {
+            margin-top: 1000px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        #btn {
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem">Scroll Here</div>
+    <button id="btn">Scroll to Element</button>
+
+    <script>
+        const elem = document.getElementById('elem');
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function() {
+            elem.scrollIntoView();
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll End Detection</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.addEventListener('scroll', function() {
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollHeight = window.pageYOffset + window.innerHeight;
+
+            if (scrollHeight === documentHeight) {
+                console.log('Page scrolled to the end!');
+            }
+        });
+    </script>
+</body>
+</html> -->
